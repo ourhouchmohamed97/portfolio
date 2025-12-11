@@ -74,7 +74,7 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
             y2="106.875"
           >
             <stop stopColor="white" />
-            <stop offset="1" stopColor="white" stop-opacity="0" />
+            <stop offset="1" stopColor="white" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>   
@@ -356,7 +356,7 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <path
       d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z"
       fill="url(#supabase__paint1_linear)"
-      fill-opacity="0.2"
+      fillOpacity="0.2"
     />
     <path
       d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.1655 56.4175L45.317 2.07103Z"
@@ -383,7 +383,7 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
         gradientUnits="userSpaceOnUse"
       >
         <stop />
-        <stop offset="1" stop-opacity="0" />
+        <stop offset="1" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>
@@ -415,7 +415,7 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
         <defs>
           <linearGradient x1="4%" y1="27%" x2="75.9%" y2="52.9%" id="flutter__a">
             <stop offset="0%" />
-            <stop stop-opacity="0" offset="100%" />
+            <stop stopOpacity="0" offset="100%" />
           </linearGradient>
         </defs>
         <path
@@ -424,7 +424,7 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
         />
         <path fill="#00569E" d="m121 280 37 37h97l-85-86z" />
         <path fill="#00B5F8" d="m72 230 48-48 50 49-49 49z" />
-        <path fill-opacity=".8" fill="url(#flutter__a)" d="m121 280 41-14 4-31z" />
+        <path fillOpacity=".8" fill="url(#flutter__a)" d="m121 280 41-14 4-31z" />
       </svg>    
   );
   
@@ -440,8 +440,8 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
             fy="50.002%"
             gradientTransform="matrix(1 0 0 .99985 0 0)"
           >
-            <stop offset="0%" stopColor="#FFF" stop-opacity=".1" />
-            <stop offset="100%" stopColor="#FFF" stop-opacity="0" />
+            <stop offset="0%" stopColor="#FFF" stopOpacity=".1" />
+            <stop offset="100%" stopColor="#FFF" stopOpacity="0" />
           </radialGradient>
         </defs>
         <path
@@ -580,8 +580,8 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
         y1="2.404%"
         y2="90.542%"
       >
-        <stop offset="0%" stopColor="#FFF" stop-opacity=".8" />
-        <stop offset="100%" stopColor="#FFF" stop-opacity="0" />
+        <stop offset="0%" stopColor="#FFF" stopOpacity=".8" />
+        <stop offset="100%" stopColor="#FFF" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="linux__logosLinuxTux2"
@@ -610,8 +610,8 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
         y1="3.102%"
         y2="93.895%"
       >
-        <stop offset="0%" stopColor="#FFF" stop-opacity=".65" />
-        <stop offset="100%" stopColor="#FFF" stop-opacity="0" />
+        <stop offset="0%" stopColor="#FFF" stopOpacity=".65" />
+        <stop offset="100%" stopColor="#FFF" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="linux__logosLinuxTux5"
@@ -620,8 +620,8 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
         y1="5.475%"
         y2="93.524%"
       >
-        <stop offset="0%" stopColor="#FFF" stop-opacity=".65" />
-        <stop offset="100%" stopColor="#FFF" stop-opacity="0" />
+        <stop offset="0%" stopColor="#FFF" stopOpacity=".65" />
+        <stop offset="100%" stopColor="#FFF" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="linux__logosLinuxTux6"
@@ -650,8 +650,8 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
         y1="13.229%"
         y2="94.673%"
       >
-        <stop offset="0%" stopColor="#FFF" stop-opacity=".8" />
-        <stop offset="100%" stopColor="#FFF" stop-opacity="0" />
+        <stop offset="0%" stopColor="#FFF" stopOpacity=".8" />
+        <stop offset="100%" stopColor="#FFF" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="linux__logosLinuxTux9"
@@ -660,8 +660,8 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
         y1="37.327%"
         y2="92.782%"
       >
-        <stop offset="0%" stopColor="#FFF" stop-opacity=".65" />
-        <stop offset="100%" stopColor="#FFF" stop-opacity="0" />
+        <stop offset="0%" stopColor="#FFF" stopOpacity=".65" />
+        <stop offset="100%" stopColor="#FFF" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="linux__logosLinuxTuxa"
@@ -670,8 +670,8 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
         y1="2.299%"
         y2="81.204%"
       >
-        <stop offset="0%" stopColor="#FFF" stop-opacity=".65" />
-        <stop offset="100%" stopColor="#FFF" stop-opacity="0" />
+        <stop offset="0%" stopColor="#FFF" stopOpacity=".65" />
+        <stop offset="100%" stopColor="#FFF" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="linux__logosLinuxTuxb"
@@ -680,8 +680,8 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
         y1="2.272%"
         y2="71.799%"
       >
-        <stop offset="0%" stopColor="#FFF" stop-opacity=".65" />
-        <stop offset="100%" stopColor="#FFF" stop-opacity="0" />
+        <stop offset="0%" stopColor="#FFF" stopOpacity=".65" />
+        <stop offset="100%" stopColor="#FFF" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="linux__logosLinuxTuxc"
@@ -720,8 +720,8 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
         y1="-17.216%"
         y2="66.118%"
       >
-        <stop offset="0%" stopColor="#FFF" stop-opacity=".65" />
-        <stop offset="100%" stopColor="#FFF" stop-opacity="0" />
+        <stop offset="0%" stopColor="#FFF" stopOpacity=".65" />
+        <stop offset="100%" stopColor="#FFF" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="linux__logosLinuxTuxg"
@@ -730,8 +730,8 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
         y1="1.565%"
         y2="104.313%"
       >
-        <stop offset="0%" stopColor="#FFF" stop-opacity=".65" />
-        <stop offset="100%" stopColor="#FFF" stop-opacity="0" />
+        <stop offset="0%" stopColor="#FFF" stopOpacity=".65" />
+        <stop offset="100%" stopColor="#FFF" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="linux__logosLinuxTuxh"
@@ -740,8 +740,8 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
         y1="4.533%"
         y2="92.827%"
       >
-        <stop offset="0%" stopColor="#FFF" stop-opacity=".65" />
-        <stop offset="100%" stopColor="#FFF" stop-opacity="0" />
+        <stop offset="0%" stopColor="#FFF" stopOpacity=".65" />
+        <stop offset="100%" stopColor="#FFF" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="linux__logosLinuxTuxi"
@@ -760,8 +760,8 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
         y1="2.89%"
         y2="94.17%"
       >
-        <stop offset="0%" stopColor="#FFF" stop-opacity=".65" />
-        <stop offset="100%" stopColor="#FFF" stop-opacity="0" />
+        <stop offset="0%" stopColor="#FFF" stopOpacity=".65" />
+        <stop offset="100%" stopColor="#FFF" stopOpacity="0" />
       </linearGradient>
       <filter
         id="linux__logosLinuxTuxk"
@@ -782,7 +782,7 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <g fill="none">
       <path
         fill="#000"
-        fill-opacity=".2"
+        fillOpacity=".2"
         d="M235.125 249.359c0 17.355-52.617 31.497-117.54 31.497S.044 266.806.044 249.359c0-17.356 52.618-31.498 117.54-31.498c64.924 0 117.45 14.142 117.541 31.498"
         filter="url(#linux__logosLinuxTuxk)"
         transform="translate(10)"
@@ -958,12 +958,14 @@ export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <path fill="#000" d="M252.762 204.455v92.089h-96.774v-92.089z" />
   </svg>
   );
-  export const UMLIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 64 64" {...props}>
-      <rect x="4" y="4" width="56" height="20" fill="#6f42c1" />
-      <rect x="4" y="28" width="56" height="20" fill="#6f42c1" />
-      <rect x="4" y="52" width="56" height="8" fill="#6f42c1" />
-    </svg>
+  export const MySQLIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg {...props} preserveAspectRatio="xMidYMid" viewBox="0 0 256 252">
+    <path
+      fill="currentColor"
+      d="M236 194c-14 0-25 1-34 5-3 1-7 1-7 4l3 6c2 3 5 8 9 11l11 8 21 10 11 9 6 4-3-6-5-5c-5-7-11-13-18-18-6-3-18-9-20-15h-1l12-3 18-3 8-2v-2l-9-10c-8-8-18-15-28-22l-18-8c-2-1-6-2-7-4l-7-13-15-30-8-20c-18-30-38-48-68-65-6-4-14-5-22-7l-13-1-8-6C34 5 8-9 1 9c-5 11 7 22 11 28l9 13 3 9c3 8 5 17 9 24l6 10c2 2 4 3 5 6-3 4-3 9-4 13-7 20-4 44 5 59 2 4 9 14 18 10 8-3 6-13 8-22l1-4 8 14c5 9 14 18 22 24 4 3 8 8 13 10l-4-4-9-10c-8-10-14-21-20-32l-7-17-3-6c-3 4-7 7-9 12-3 7-3 17-4 26h-1c-6-1-8-7-10-12-5-12-6-32-1-46 1-4 6-15 4-19-1-3-4-5-6-7l-7-12-10-30-9-13c-3-5-7-8-10-14-1-2-2-5 0-7l2-2c2-2 9 0 11 1 6 3 12 5 17 9l8 6h4c6 1 12 0 17 2 9 3 18 7 25 12 23 14 42 35 54 59 3 4 3 8 5 12l12 26c4 8 7 16 12 23 3 4 14 6 18 8l12 4 18 12c2 2 11 7 12 10Z"
+    />
+    <path fill="currentColor" d="m58 43-7 1 6 7 4 9v-1c3-1 4-4 4-8l-2-4-5-4Z" />
+  </svg>
   );
   
   export const MarkdownIcon = (props: React.SVGProps<SVGSVGElement>) => (

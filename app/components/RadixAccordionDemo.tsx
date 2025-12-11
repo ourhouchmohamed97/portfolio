@@ -7,19 +7,19 @@ import {
   
   const ITEMS = [
     {
-      title: 'What is Animate UI?',
+      title: "Crafting Responsive Digital Experiences",
       content:
-        'Animate UI is an open-source distribution of React components built with TypeScript, Tailwind CSS, and Motion.',
+        "Designing and developing web apps that adapt beautifully to every device, with smooth performance and solid API integrations.",
     },
     {
-      title: 'How is it different from other libraries?',
+      title: "System Architecture & Scalability",
       content:
-        'Instead of installing via NPM, you copy and paste the components directly. This gives you full control to modify or customize them as needed.',
+        "Design modular project structures focused on performance, maintainability, and long-term scalability.",
     },
     {
-      title: 'Is Animate UI free to use?',
+      title: "Secure Integrations & Backend Services",
       content:
-        'Absolutely! Animate UI is fully open-source. You can use, modify, and adapt it to fit your needs.',
+        "Implement authentication, APIs, and payment systems with robust, modern security best practices.",
     },
   ];
   

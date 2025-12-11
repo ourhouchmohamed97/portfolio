@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -12,6 +12,8 @@ import { BentoDemo } from "./components/BentoGrid";
 import { cn } from "@/lib/utils";
 import SkillsSection from "./components/Skills";
 import { RadixAccordionDemo } from "./components/RadixAccordionDemo";
+import ShapeBlur from "./components/ShapeBlur";
+import TargetCursor from "./components/TargetCursor";
 
 interface ProjectCardProps {
   title: string;
@@ -48,7 +50,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
 
       {/* Card Content */}
-      <div className={cn( "p-6 flex-1 flex flex-col rounded-b-2xl", "bg-transparent [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] backdrop-blur-md [border:1px_solid_rgba(0,0,0,.1)]", "dark:bg-transparent dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)]" )} >
+      <div
+        className={cn(
+          "p-6 flex-1 flex flex-col rounded-b-2xl",
+          "bg-transparent [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] backdrop-blur-md [border:1px_solid_rgba(0,0,0,.1)]",
+          "dark:bg-transparent dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)]"
+        )}
+      >
         {/* Title */}
         <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
           {title}
@@ -118,8 +126,30 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   );
 };
 
+
+export function TargetDemo() {
+  return (
+    <div>
+      <TargetCursor 
+        spinDuration={2}
+        hideDefaultCursor={true}
+        parallaxOn={true}
+      />
+      
+      <h1>Hover over the elements below</h1>
+      <button className="cursor-target">Click me!</button>
+      <div className="cursor-target">Hover target</div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [isCopied, setIsCopied] = useState(false);
+  const [pixelRatio, setPixelRatio] = useState(1);
+
+  useEffect(() => {
+    setPixelRatio(window.devicePixelRatio || 1);
+  }, []);
 
   const copyEmail = async () => {
     try {
@@ -376,7 +406,7 @@ export default function Home() {
           <BentoDemo />
         </section>
 
-        <section className="relative w-full h-[40000px] dark:bg-black overflow-hidden py-20 px-4">
+        <section className="relative w-full dark:bg-black overflow-hidden py-20 px-4">
           {/* Background decoration */}
           <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/50 to-black pointer-events-none"></div>
           <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -425,159 +455,240 @@ export default function Home() {
             <div className="flex justify-center mt-16">
               <ShinyButtonDemo />
             </div>
-            </div>
+          </div>
 
-            <style jsx>{`
-              @keyframes fadeInUp {
-                from {
-                  opacity: 0;
-                  transform: translateY(30px);
-                }
-                to {
-                  opacity: 1;
-                  transform: translateY(0);
-                }
-              }
-
-              .animate-fadeInUp {
-                animation: fadeInUp 0.8s ease-out forwards;
+          <style jsx>{`
+            @keyframes fadeInUp {
+              from {
                 opacity: 0;
+                transform: translateY(30px);
               }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
 
+            .animate-fadeInUp {
+              animation: fadeInUp 0.8s ease-out forwards;
+              opacity: 0;
+            }
+
+            .projects-grid {
+              display: grid;
+              grid-template-columns: repeat(12, 1fr);
+              grid-template-rows: auto minmax(300px, auto); /* Fixed height for bottom row */
+              gap: 24px;
+              min-height: auto;
+            }
+
+            /* First project - full width */
+            .project-card-1 {
+              grid-column: 1 / -1; /* Takes all columns */
+              grid-row: 1;
+              width: 100%;
+            }
+
+            /* Remaining projects (2-4) */
+            .project-card-2 {
+              grid-column: span 4; /* Takes 4 columns */
+              grid-row: 2;
+              height: 450px; /* Fixed height */
+            }
+
+            .project-card-3 {
+              grid-column: span 4; /* Takes 4 columns */
+              grid-row: 2;
+              height: 450px; /* Fixed height */
+            }
+
+            .project-card-4 {
+              grid-column: span 4; /* Takes 4 columns */
+              grid-row: 2;
+              height: 450px; /* Fixed height */
+            }
+
+            /* Ensure ProjectCard components fill their containers */
+            .project-card-2 .project-card-wrapper,
+            .project-card-3 .project-card-wrapper,
+            .project-card-4 .project-card-wrapper {
+              height: 100%;
+            }
+
+            /* Responsive layout for tablets */
+            @media (max-width: 1024px) {
               .projects-grid {
-                display: grid;
-                grid-template-columns: repeat(12, 1fr);
-                grid-template-rows: auto minmax(300px, auto); /* Fixed height for bottom row */
-                gap: 24px;
-                min-height: auto;
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: auto minmax(300px, auto);
               }
 
-              /* First project - full width */
               .project-card-1 {
-                grid-column: 1 / -1; /* Takes all columns */
-                grid-row: 1;
-                width: 100%;
-
+                grid-column: 1 / -1;
               }
 
-              /* Remaining projects (2-4) */
               .project-card-2 {
-                grid-column: span 4; /* Takes 4 columns */
+                grid-column: span 3;
                 grid-row: 2;
-                height: 450px; /* Fixed height */
+                height: 520px;
               }
 
               .project-card-3 {
-                grid-column: span 4; /* Takes 4 columns */
+                grid-column: span 3;
                 grid-row: 2;
-                height: 450px; /* Fixed height */
+                height: 520px;
               }
 
               .project-card-4 {
-                grid-column: span 4; /* Takes 4 columns */
-                grid-row: 2;
-                height: 450px; /* Fixed height */
+                grid-column: 1 / -1;
+                grid-row: 3;
+                height: 520px;
+                margin-top: 24px;
+              }
+            }
+
+            /* Responsive layout for mobile */
+            @media (max-width: 768px) {
+              .projects-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 20px;
               }
 
-              /* Ensure ProjectCard components fill their containers */
-              .project-card-2 .project-card-wrapper,
-              .project-card-3 .project-card-wrapper,
-              .project-card-4 .project-card-wrapper {
-                height: 100%;
+              .project-card-1,
+              .project-card-2,
+              .project-card-3,
+              .project-card-4 {
+                grid-column: 1 / -1;
+                grid-row: auto;
+                height: auto; /* Remove fixed height on mobile */
+                min-height: 300px;
               }
 
-              /* Responsive layout for tablets */
-              @media (max-width: 1024px) {
-                .projects-grid {
-                  grid-template-columns: repeat(6, 1fr);
-                  grid-template-rows: auto minmax(300px, auto);
-                }
+              .project-card-2,
+              .project-card-3,
+              .project-card-4 {
+                margin-top: 0;
+              }
+            }
 
-                .project-card-1 {
-                  grid-column: 1 / -1;
-                }
-
-                .project-card-2 {
-                  grid-column: span 3;
-                  grid-row: 2;
-                  height: 520px;
-                }
-
-                .project-card-3 {
-                  grid-column: span 3;
-                  grid-row: 2;
-                  height: 520px;
-                }
-
-                .project-card-4 {
-                  grid-column: 1 / -1;
-                  grid-row: 3;
-                  height: 520px;
-                  margin-top: 24px;
-                }
+            /* Small mobile devices */
+            @media (max-width: 480px) {
+              .projects-grid {
+                gap: 16px;
               }
 
-              /* Responsive layout for mobile */
-              @media (max-width: 768px) {
-                .projects-grid {
-                  grid-template-columns: 1fr;
-                  grid-template-rows: auto;
-                  gap: 20px;
-                }
-
-                .project-card-1,
-                .project-card-2,
-                .project-card-3,
-                .project-card-4 {
-                  grid-column: 1 / -1;
-                  grid-row: auto;
-                  height: auto; /* Remove fixed height on mobile */
-                  min-height: 300px;
-                }
-
-                .project-card-2,
-                .project-card-3,
-                .project-card-4 {
-                  margin-top: 0;
-                }
+              .project-card-1,
+              .project-card-2,
+              .project-card-3,
+              .project-card-4 {
+                min-height: 280px;
               }
+            }
+          `}</style>
+        </section>
 
-              /* Small mobile devices */
-              @media (max-width: 480px) {
-                .projects-grid {
-                  gap: 16px;
-                }
-
-                .project-card-1,
-                .project-card-2,
-                .project-card-3,
-                .project-card-4 {
-                  min-height: 280px;
-                }
-              }
-            `}</style>
-          </section>
-
-          {/* Skills Section */}
-          <section className="relative w-full h-[40000px] dark:bg-black overflow-hidden py-20 px-4">
-            <div className="text-center mb-24 animate-fadeInUp">
-              <h1 className="w-full animate-fadeInUp text-balance text-center leading-tight opacity-90 dark:text-zinc-100 font-sans mt-8">
-                Behind the Magic
-              </h1>
-              <h1 className="w-full animate-fadeInUp text-balance text-center font-instrument-serif text-5xl text-zinc-700 leading-tight opacity-90 md:text-5xl lg:text-6xl dark:text-zinc-100 font-instrument md:text-nowrap">
-                My Craft <span style={{ color: "#432dd7" }}>Toolkit</span>
-              </h1>
+        {/* Skills Section */}
+        <section className="relative w-full dark:bg-black overflow-hidden py-20 px-4">
+          <div className="text-center mb-24 animate-fadeInUp">
+            <h1 className="w-full animate-fadeInUp text-balance text-center leading-tight opacity-90 dark:text-zinc-100 font-sans mt-8">
+              Behind the Magic
+            </h1>
+            <h1 className="w-full animate-fadeInUp text-balance text-center font-instrument-serif text-5xl text-zinc-700 leading-tight opacity-90 md:text-5xl lg:text-6xl dark:text-zinc-100 font-instrument md:text-nowrap">
+              My Craft <span style={{ color: "#432dd7" }}>Toolkit</span>
+            </h1>
+          </div>
+          <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 mt-16 px-4 max-w-6xl mx-auto">
+            <div className="w-full md:w-1/2 max-w-2xl">
+              <RadixAccordionDemo />
             </div>
-            <div className="flex flex-row justify-center gap-6">
-              <div className="w-72 md:w-80">
-                <RadixAccordionDemo />
-              </div>
-              <div className="w-72 md:w-80">
-                the design here
+            <div className="w-full md:w-1/2 max-w-2xl">
+              <div className="relative h-[350px] w-full overflow-hidden rounded-lg">
+                <ShapeBlur
+                  variation={0}
+                  pixelRatioProp={pixelRatio}
+                  shapeSize={1.2}
+                  roundness={0.5}
+                  borderSize={0.05}
+                  circleSize={0.5}
+                  circleEdge={1}
+                />
               </div>
             </div>
+          </div>
+          <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 px-4">
             <SkillsSection />
-          </section>
+          </div>
+        </section>
+
+        {/* Connection section */}
+        <section className="relative w-full dark:bg-black overflow-hidden py-20 px-4">
+          <div className="flex flex-col gap-6">
+            <div>
+              <h2 className="w-full animate-fadeInUp text-balance text-center font-instrument-serif text-5xl text-zinc-700 leading-tight opacity-90 md:text-5xl lg:text-6xl dark:text-zinc-100">
+                <span className="font-instrument md:text-nowrap">
+                  FROM VISION TO REALITY,
+                </span>
+                <br />
+                <span className="font-medium md:text-nowrap">
+                  YOUR NEXT BIG THING STARTS HERE.
+                </span>
+              </h2>
+            </div>
+            <div className="flex items-center justify-center">
+              <button className="group relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-full border border-black/30 bg-black/20 py-[3px] pr-[3px] pl-2 font-medium text-base opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3 dark:border-white/10 dark:bg-white/10">
+                <span className="z-10 px-3 text-black transition-colors duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                  Let's Connect
+                </span>
+                <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-black opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100 dark:bg-white"></span>
+                <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-black p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5 dark:bg-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-arrow-right text-white transition-all duration-300 group-hover:translate-x-5 group-hover:opacity-0 dark:text-black"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-arrow-right -translate-x-5 absolute text-white opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 dark:text-black"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </span>
+              </button>
+            </div>
+            <div>
+              <h2 className="w-full animate-fadeInUp text-balance text-center font-outfit-serif text-5xl text-zinc-700 leading-tight opacity-90 md:text-5xl lg:text-2xl dark:text-zinc-100">
+                <span className="text-md font-medium dark:text-white">
+                Ready for full-time or freelance projects.
+                </span>
+                <br />
+                <span className="text-md font-medium text-gray-500 dark:text-gray-400">
+                I focus on delivering clean, responsive, and user-centric experiences.
+                </span>
+              </h2>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

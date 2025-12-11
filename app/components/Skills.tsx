@@ -4,7 +4,7 @@ import {
   ReactIcon, NextIcon, JsIcon, TsIcon, NodeIcon, PythonIcon, JavaIcon, CIcon, CppIcon, 
   GraphQLIcon, PhpIcon, BashIcon, GithubIcon, SupabaseIcon, NginxIcon, MarkdownIcon,
   MongoIcon, FirebaseIcon, FlutterIcon, DartIcon, FigmaIcon, TailwindIcon, FastAPIIcon,
-  DockerIcon, GitIcon, LinuxIcon, VercelIcon, BetterAuthIcon, SocketIcon, UMLIcon
+  DockerIcon, GitIcon, LinuxIcon, VercelIcon, BetterAuthIcon, SocketIcon, MySQLIcon
 } from './Icons';
 
 interface SkillCardProps {
@@ -75,14 +75,14 @@ const SkillsSection = () => {
     { name: 'Vercel', icon: VercelIcon },
     { name: 'Socket.io', icon: SocketIcon },
     { name: 'Better Auth', icon: BetterAuthIcon },
-    { name: 'UML', icon: UMLIcon },
+    { name: 'MySQL', icon: MySQLIcon },
     { name: 'Markdown', icon: MarkdownIcon },
     { name: 'Nginx', icon: NginxIcon },
     { name: 'FastAPI', icon: FastAPIIcon }
   ];
 
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 overflow-hidden py-20 px-4">
+    <section className="relative w-full bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 overflow-hidden py-20 px-4">
       {/* Animated background effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />

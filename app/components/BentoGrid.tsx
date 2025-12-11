@@ -774,7 +774,6 @@ const features = [
     className: "row-span-3 col-start-1 col-end-4 row-start-1 h-[300px]", // top-left wide box
     href: "#",
     cta: "Start Collaborating",
-
   },
   {
     Icon: BellIcon,
@@ -792,7 +791,6 @@ const features = [
   {
     Icon: LaptopIcon,
     name: "Remote",
-    description: "Your work, connected worldwide.",
     href: "#",
     cta: "Connect Now",
     className: "col-span-2 row-span-2 col-start-1 h-[600px]", // middle center box
