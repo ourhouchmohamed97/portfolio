@@ -14,6 +14,7 @@ import SkillsSection from "./components/Skills";
 import { RadixAccordionDemo } from "./components/RadixAccordionDemo";
 import ShapeBlur from "./components/ShapeBlur";
 import TargetCursor from "./components/TargetCursor";
+import ContactButton from "./components/ContactButton";
 
 interface ProjectCardProps {
   title: string;
@@ -626,55 +627,16 @@ export default function Home() {
             <div>
               <h2 className="w-full animate-fadeInUp text-balance text-center font-instrument-serif text-5xl text-zinc-700 leading-tight opacity-90 md:text-5xl lg:text-6xl dark:text-zinc-100">
                 <span className="font-instrument md:text-nowrap">
-                  FROM VISION TO REALITY,
+                  FROM VISION TO <span style={{ color: "#432dd7" }}>REALITY</span>,
                 </span>
                 <br />
                 <span className="font-medium md:text-nowrap">
-                  YOUR NEXT BIG THING STARTS HERE.
+                  YOUR <span style={{ color: "#432dd7" }}>NEXT BIG THING</span> STARTS HERE.
                 </span>
               </h2>
             </div>
             <div className="flex items-center justify-center">
-              <button className="group relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-full border border-black/30 bg-black/20 py-[3px] pr-[3px] pl-2 font-medium text-base opacity-85 backdrop-blur-xs transition-all hover:bg-transparent md:py-1 md:pr-1 md:pl-3 dark:border-white/10 dark:bg-white/10">
-                <span className="z-10 px-3 text-black transition-colors duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
-                  Let's Connect
-                </span>
-                <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-black opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100 dark:bg-white"></span>
-                <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-black p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5 dark:bg-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-arrow-right text-white transition-all duration-300 group-hover:translate-x-5 group-hover:opacity-0 dark:text-black"
-                    aria-hidden="true"
-                  >
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-arrow-right -translate-x-5 absolute text-white opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 dark:text-black"
-                    aria-hidden="true"
-                  >
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
-                </span>
-              </button>
+              <ContactButton />
             </div>
             <div>
               <h2 className="w-full animate-fadeInUp text-balance text-center font-outfit-serif text-5xl text-zinc-700 leading-tight opacity-90 md:text-5xl lg:text-2xl dark:text-zinc-100">
@@ -690,8 +652,9 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <Footer />
+      <section className="relative w-full dark:bg-black overflow-hidden py-20 px-4">
+        <Footer />
+      </section>
     </>
   );
 }
