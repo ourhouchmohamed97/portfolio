@@ -137,7 +137,7 @@ export function AnimatedListDemo({
 
 export function Collaboration() {
   return (
-    <div className="flex flex-col items-center justify-center text-center gap-1 mx-auto">
+    <div className="flex flex-col items-center justify-center text-center gap-1 mx-auto pl-4 lg:pl-8 xl:pl-12 px-10">
       <h2 className="w-full animate-fadeInUp text-balance text-center font-instrument-serif leading-tight opacity-90 dark:text-zinc-100">
         <SparklesText className="font-instrument-serif lg:text-5xl md:text-base">Let's work <span className="text-blue-500"> together</span></SparklesText>
         <br />
