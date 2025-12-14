@@ -12,6 +12,7 @@
     --custom-bg: #1f082b;
   }
 
+
 @supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){
       *,::backdrop,:after,:before{
           --tw-border-style:solid;
@@ -3089,7 +3090,7 @@
       }
   }
   .\!bg-black{
-      background-color:#0a0a0a!important
+      background-color:#000000!important
   }
   .bg-\(--callout-color\)\/50{
       background-color:var(--callout-color)
@@ -8091,6 +8092,7 @@
   inherits:false;
   initial-value:0
 }
+
 :root{
   --radius:.625rem;
   --background:#f2f3f5;
