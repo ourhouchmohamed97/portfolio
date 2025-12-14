@@ -12,9 +12,9 @@ import { BentoDemo } from "./components/BentoGrid";
 import { cn } from "@/lib/utils";
 import SkillsSection from "./components/Skills";
 import { RadixAccordionDemo } from "./components/RadixAccordionDemo";
-import ShapeBlur from "./components/ShapeBlur";
 import TargetCursor from "./components/TargetCursor";
 import ContactButton from "./components/ContactButton";
+import Orb from "./components/Orb";
 
 interface ProjectCardProps {
   title: string;
@@ -604,14 +604,11 @@ export default function Home() {
             </div>
             <div className="w-full md:w-1/2 max-w-2xl">
               <div className="relative h-[350px] w-full overflow-hidden rounded-lg">
-                <ShapeBlur
-                  variation={0}
-                  pixelRatioProp={pixelRatio}
-                  shapeSize={1.2}
-                  roundness={0.5}
-                  borderSize={0.05}
-                  circleSize={0.5}
-                  circleEdge={1}
+                <Orb
+                  hoverIntensity={0.5}
+                  rotateOnHover={true}
+                  hue={0}
+                  forceHoverState={false}
                 />
               </div>
             </div>
