@@ -12,7 +12,7 @@ export default function Homepage() {
       </header>
 
       {/* Main content with top padding to avoid navbar overlap */}
-      <main className="flex flex-col w-full mt-28 pt-28">
+      <main className="flex flex-col w-full pt-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           
           {/* Two-column layout: text left, image right — on ALL screen sizes */}
