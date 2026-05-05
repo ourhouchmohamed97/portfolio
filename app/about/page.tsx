@@ -3,40 +3,124 @@ import Image from "next/image";
 
 export default function Homepage() {
   return (
-    <>
-      <header className="fixed top-2.5 z-50 w-full md:top-4">
-        <div className="container mx-auto px-6">
-          <Navbar />
-        </div>
-      </header>
-      <main className="dark:bg-black w-full mt-24">
-        <section
-          className="relative flex w-full flex flex-col items-center justify-center dark:bg-black overflow-hidden py-pagebuilder"
-          id="hero-section"
-        >
-          <div className="mx-auto mt-16 flex max-w-6xl flex-col items-center gap-10 px-4 md:flex-row md:gap-x-24">
-            <div className="flex w-full flex-col gap-6 md:w-1/2 md:mr-12">
-              <h2 className="text-center text-sm tracking-widest opacity-70 md:text-left">
-                MORE ABOUT ME
-              </h2>
+    <section
+      id="about"
+      className="relative w-full bg-white py-20 md:py-28 lg:py-32 dark:bg-black"
+    >
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
 
-              <h1 className="text-center font-instrument-serif text-4xl leading-tight text-zinc-700 md:text-left md:text-5xl lg:text-6xl dark:text-zinc-100">
-                I'm Mohamed, a software{" "}
-                <span className="text-[#432dd7]">engineer</span>
+          {/* ── Text column ── */}
+          <div className="order-2 lg:order-1 lg:col-span-7">
+            <div className="space-y-6 lg:space-y-8">
+
+              {/* Label */}
+              <span className="inline-block text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                More About Me
+              </span>
+
+              {/* Heading */}
+              <h1 className="text-4xl font-serif font-bold leading-tight tracking-tight text-zinc-900 md:text-5xl lg:text-6xl dark:text-white">
+                I&apos;m Mohamed, a{" "}
+                <span className="text-[#432dd7]">software engineer</span>
               </h1>
-            </div>
-            <div className="relative w-full max-w-md aspect-square overflow-hidden rounded-xl border-4 border-gray-800 md:w-1/2">
-              <Image
-                src="/images/profile.jpeg"
-                alt="Profile"
-                fill
-                className="object-cover"
-                priority
-              />
+
+              {/* Body text */}
+              <div className="prose prose-zinc max-w-none text-lg leading-relaxed dark:prose-invert md:text-xl">
+                <p>
+                  I&apos;m Mohamed, a passionate software engineer and current student at 42.
+                </p>
+                <p>
+                  I love building dynamic, efficient applications — exploring new
+                  technologies and sharpening my coding skills every day. I work
+                  across both front-end and back-end, always aiming to combine
+                  solid functionality with clean, intuitive, user-centered design.
+                </p>
+                <p>
+                  I thrive on learning, teamwork, and solving hard problems in
+                  real-world software development.
+                </p>
+              </div>
+
+              {/* Highlight phrase */}
+              <p className="mt-8 text-xl font-medium text-zinc-700 dark:text-zinc-200">
+                Every day I aim to bring{" "}
+                <span className="bg-gradient-to-r from-[#432dd7] to-indigo-500 bg-[length:100%_3px] bg-left-bottom bg-no-repeat pb-1 transition-all duration-400 hover:bg-[length:0%_3px]">
+                  energy, curiosity
+                </span>{" "}
+                and drive to create{" "}
+                <span className="bg-gradient-to-r from-indigo-500 to-[#432dd7] bg-[length:100%_3px] bg-left-bottom bg-no-repeat pb-1 transition-all duration-500 hover:bg-[length:0%_3px]">
+                  meaningful impact
+                </span>{" "}
+                through my work.
+              </p>
+
+              {/* Social links */}
+              <div className="mt-10 flex flex-wrap justify-center gap-8 lg:justify-start">
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/in/your-username"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-zinc-500 transition-colors duration-200 hover:text-[#432dd7] dark:text-zinc-400 dark:hover:text-[#432dd7]"
+                >
+                  {/* LinkedIn icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
+                    <path d="M20.447 20.452H17.01v-5.569c0-1.328-.024-3.037-1.852-3.037-1.854 0-2.137 1.448-2.137 2.943v5.663H9.583V9h3.307v1.561h.046c.461-.874 1.586-1.796 3.265-1.796 3.492 0 4.137 2.299 4.137 5.293l.109 6.394zM5.337 7.433a1.921 1.921 0 1 1 0-3.842 1.921 1.921 0 0 1 0 3.842zm1.654 13.019H3.683V9h3.308v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+
+                {/* GitHub */}
+                <a
+                  href="https://github.com/your-username"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="text-zinc-500 transition-colors duration-200 hover:text-[#432dd7] dark:text-zinc-400 dark:hover:text-[#432dd7]"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
+                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                  </svg>
+                </a>
+
+                {/* Instagram */}
+                <a
+                  href="https://instagram.com/your-handle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="text-zinc-500 transition-colors duration-200 hover:text-[#432dd7] dark:text-zinc-400 dark:hover:text-[#432dd7]"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-        </section>
-      </main>
-    </>
+
+          {/* ── Image column ── */}
+          <div className="relative order-1 mx-auto w-full max-w-md lg:order-2 lg:col-span-5 lg:mx-0">
+            <div className="aspect-square overflow-hidden rounded-2xl border-4 border-zinc-200/60 shadow-xl transition-transform duration-500 hover:scale-[1.03] dark:border-zinc-700/60 dark:shadow-2xl">
+              <Image
+                src="/images/profile.jpeg"
+                alt="Mohamed – Software Engineer"
+                fill
+                className="object-cover grayscale-[30%] transition-all duration-700 hover:grayscale-0"
+                priority
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+            </div>
+
+            {/* Badge */}
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#432dd7] px-6 py-2 text-sm font-medium text-white shadow-lg">
+              @42 Student • Full-Stack
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
   );
 }
