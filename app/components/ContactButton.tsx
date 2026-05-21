@@ -15,7 +15,7 @@ export default function ContactButton() {
 
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText('hello@gmail.com');
+    navigator.clipboard.writeText('ourhouchmohamed97@gmail.com');
     setShowCopyNotification(true);
     setTimeout(() => setShowCopyNotification(false), 2000);
   };
@@ -136,7 +136,7 @@ export default function ContactButton() {
 
 
             {/* Tabs */}
-            <div className="flex gap-2 px-6 mb-4">
+            <div className="flex justify-center gap-2 px-6 mb-4">
               <button
                 onClick={() => setActiveTab('quick')}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
