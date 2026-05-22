@@ -19,19 +19,13 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { WebsiteDemo } from "./components/websiteDemo";
 
-interface WebsiteView {
+interface WebsiteDemoData {
   image: string;
   title: string;
-  description: string;
+  description?: string;
   badge?: string;
-  color?: "blue" | "purple" | "cyan" | "indigo" | "pink" | "emerald" | "orange"; // ✅ Add this line
-}
-
-interface WebsiteDemoData {
-  views: [WebsiteView, WebsiteView]; // Exactly 2 views
   projectName: string;
   projectType?: string;
-  defaultColor?: "blue" | "purple" | "cyan" | "indigo" | "pink" | "emerald" | "orange"; // ✅ Add this too
 }
 
 interface ProjectCardProps {
@@ -378,29 +372,15 @@ export default function Home() {
     },
     {
       title: "E-commerce API Gateway",
-      description:
-        "A robust microservices-based API gateway handling product catalog, user authentication, order processing, and payment integration. Designed for high scalability and fault tolerance.",
+      description: "A robust microservices-based API gateway handling product catalog, user authentication, order processing, and payment integration...",
       tags: ["Node.js", "Express", "Kafka", "MongoDB", "Docker"],
       websiteDemo: {
-        views: [
-          {
-            image: "/projects/1.jpg",
-            title: "Homepage",
-            description: "Modern storefront with product showcase and search",
-            badge: "Home",
-            color: "purple"
-          },
-          {
-            image: "/projects/2.jpg", 
-            title: "Admin Dashboard",
-            description: "Analytics, orders management, and inventory control",
-            badge: "Admin",
-            color: "pink"
-          }
-        ],
+        image: "/projects/test.png",
+        title: "ShopFlow Storefront",
+        description: "Modern e-commerce platform with product showcase, cart, and secure checkout flow.",
+        badge: "Live v2.0",
         projectName: "ShopFlow",
         projectType: "E-commerce",
-        defaultColor: "indigo" 
       }
     },
     {
