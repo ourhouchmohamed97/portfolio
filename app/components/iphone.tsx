@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { Iphone } from "@/components/ui/iphone";
 
 export function PhoneDemo() {
-  const [activePhone, setActivePhone] = useState(0); // Changed to 0 (first index)
+  const [activePhone, setActivePhone] = useState(1);
 
   const phones = [
     { 
@@ -37,7 +37,7 @@ export function PhoneDemo() {
   };
 
   return (
-    <div className="relative min-h-[600px] flex flex-col items-center justify-center py-16 px-4 bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 dark:from-blue-900 dark:via-blue-800 dark:to-cyan-900">
+    <div className="relative w-full min-h-[600px] flex flex-col items-center justify-center py-16 px-4 bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 dark:from-blue-900 dark:via-blue-800 dark:to-cyan-900">
       
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
