@@ -51,7 +51,7 @@ export function PhoneDemo() {
           <span className="text-sm font-medium dark:text-white">Mobile App</span>
         </div>
         <h1 className="font-bold text-5xl tracking-tight text-slate-900 dark:text-white">
-          HayMobility — Smart Car Tracking App
+          HayMobility
         </h1>
       </div>
 
