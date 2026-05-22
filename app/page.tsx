@@ -17,6 +17,22 @@ import ContactButton from "./components/ContactButton";
 import Orb from "./components/Orb";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { WebsiteDemo } from "./components/websiteDemo";
+
+interface WebsiteView {
+  image: string;
+  title: string;
+  description: string;
+  badge?: string;
+  color?: "blue" | "purple" | "cyan" | "indigo" | "pink" | "emerald" | "orange"; // ✅ Add this line
+}
+
+interface WebsiteDemoData {
+  views: [WebsiteView, WebsiteView]; // Exactly 2 views
+  projectName: string;
+  projectType?: string;
+  defaultColor?: "blue" | "purple" | "cyan" | "indigo" | "pink" | "emerald" | "orange"; // ✅ Add this too
+}
 
 interface ProjectCardProps {
   title: string;
@@ -25,6 +41,7 @@ interface ProjectCardProps {
   defaultImage?: string;
   hoverImage?: string;
   image?: string;
+  websiteDemo?: WebsiteDemoData; 
 }
 
 const ProjectCard: React.FC<ProjectCardProps & { isActive?: boolean }> = ({
@@ -34,6 +51,7 @@ const ProjectCard: React.FC<ProjectCardProps & { isActive?: boolean }> = ({
   defaultImage,
   hoverImage,
   image,
+  websiteDemo,
   isActive = true,
 }) => {
   return (
@@ -42,18 +60,15 @@ const ProjectCard: React.FC<ProjectCardProps & { isActive?: boolean }> = ({
     }`}>
       {/* ✅ Card Header - EXTRA HEIGHT (h-72 md:h-96) */}
       <div className="relative h-72 md:h-96 flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-zinc-900 to-zinc-800">
-        <div className="relative w-full h-full z-10 px-6">
+        <div className="relative w-full h-full z-10">
           {defaultImage && hoverImage ? (
             <div className="w-full h-full flex items-center justify-center">
               <PhoneDemo />
             </div>
-          ) : image ? (
-            <img
-              src={image}
-              alt={title}
-              className="w-full h-full object-cover rounded-t-2xl transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
+          ) : websiteDemo ? (
+            <div className="w-full h-full flex items-center justify-center">
+              <WebsiteDemo {...websiteDemo} />
+            </div>
           ) : (
             <div className="w-full h-full bg-zinc-700/50 rounded-t-2xl flex items-center justify-center">
               <span className="text-zinc-400 text-sm">No image</span>
@@ -62,18 +77,13 @@ const ProjectCard: React.FC<ProjectCardProps & { isActive?: boolean }> = ({
         </div>
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
-        
-        {/* Optional: Hover overlay with CTA */}
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6 pointer-events-none">
-          <span className="text-white text-sm font-medium">View Project →</span>
-        </div>
       </div>
 
       {/* ✅ Card Content - More padding for bigger cards */}
       <div
         className={cn(
           "p-6 md:p-8 flex-1 flex flex-col rounded-b-2xl",
-          "bg-transparent [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] backdrop-blur-md [border:1px_solid_rgba(0,0,0,.1)]",
+          "bg-white/60 backdrop-blur-md border border-black/5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)]",
           "dark:bg-transparent dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)]"
         )}
       >
@@ -209,11 +219,11 @@ const ProjectCarousel = ({ projects }: { projects: ProjectCardProps[] }) => {
           {/* Left Arrow */}
           <button
             onClick={scrollPrev}
-            className="w-11 h-11 flex items-center justify-center rounded-full border border-white/20 bg-black dark:bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-700 transition"
+            className="w-11 h-11 flex items-center justify-center rounded-full border dark:border-white/20 border-black/20 dark:bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-700 transition"
             aria-label="Previous slide"
           >
             <svg
-              className="w-5 h-5 text-white"
+              className="w-5 h-5 dark:text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -247,11 +257,11 @@ const ProjectCarousel = ({ projects }: { projects: ProjectCardProps[] }) => {
           {/* Right Arrow */}
           <button
             onClick={scrollNext}
-            className="w-11 h-11 flex items-center justify-center rounded-full border border-white/20 bg-black dark:bg-zinc-900/60 backdrop-blur-md bg-zinc-800 hover:bg-zinc-700 transition"
+            className="w-11 h-11 flex items-center justify-center rounded-full border dark:border-white/20 dark:bg-zinc-900/60 backdrop-blur-md bg-zinc-800 hover:bg-zinc-700 transition"
             aria-label="Next slide"
           >
             <svg
-              className="w-5 h-5 text-white"
+              className="w-5 h-5 dark:text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -371,7 +381,27 @@ export default function Home() {
       description:
         "A robust microservices-based API gateway handling product catalog, user authentication, order processing, and payment integration. Designed for high scalability and fault tolerance.",
       tags: ["Node.js", "Express", "Kafka", "MongoDB", "Docker"],
-      image: "/projects/1.jpg",
+      websiteDemo: {
+        views: [
+          {
+            image: "/projects/1.jpg",
+            title: "Homepage",
+            description: "Modern storefront with product showcase and search",
+            badge: "Home",
+            color: "purple"
+          },
+          {
+            image: "/projects/2.jpg", 
+            title: "Admin Dashboard",
+            description: "Analytics, orders management, and inventory control",
+            badge: "Admin",
+            color: "pink"
+          }
+        ],
+        projectName: "ShopFlow",
+        projectType: "E-commerce",
+        defaultColor: "indigo" 
+      }
     },
     {
       title: "Real-time Chat Application",
