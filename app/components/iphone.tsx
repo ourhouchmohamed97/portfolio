@@ -119,25 +119,6 @@ export function PhoneDemo() {
           </p>
         </div>
       </div>
-
-      {/* Navigation dots */}
-      <div className="flex items-center gap-3 mt-12 relative z-20">
-        {phones.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setActivePhone(index)}
-            className={`
-              transition-all duration-300 rounded-full
-              focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500
-              ${activePhone === index 
-                ? 'w-8 h-2 bg-blue-500 dark:bg-blue-400' 
-                : 'w-2 h-2 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600'
-              }
-            `}
-            aria-label={`View ${phones[index].title}`}
-          />
-        ))}
-      </div>
     </div>
   );
 }
