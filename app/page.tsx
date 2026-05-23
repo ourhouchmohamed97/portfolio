@@ -26,6 +26,7 @@ interface WebsiteDemoData {
   badge?: string;
   projectName: string;
   projectType?: string;
+  url?: string;
 }
 
 interface ProjectCardProps {
@@ -35,7 +36,9 @@ interface ProjectCardProps {
   defaultImage?: string;
   hoverImage?: string;
   image?: string;
-  websiteDemo?: WebsiteDemoData; 
+  websiteDemo?: WebsiteDemoData;
+  demoUrl?: string;
+  codeUrl?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps & { isActive?: boolean }> = ({
@@ -46,13 +49,19 @@ const ProjectCard: React.FC<ProjectCardProps & { isActive?: boolean }> = ({
   hoverImage,
   image,
   websiteDemo,
+  demoUrl,
+  codeUrl,
   isActive = true,
 }) => {
   return (
-    <div className={`group relative rounded-2xl overflow-hidden transition-all duration-500 h-full flex flex-col ${
-      isActive ? 'scale-100 opacity-100 shadow-2xl shadow-[#432dd7]/20' : 'scale-98 opacity-85'
-    }`}>
-      {/* ✅ Card Header - EXTRA HEIGHT (h-72 md:h-96) */}
+    <div
+      className={`group relative rounded-2xl overflow-hidden transition-all duration-500 h-full flex flex-col ${
+        isActive
+          ? "scale-100 opacity-100 shadow-2xl shadow-[#432dd7]/20"
+          : "scale-98 opacity-85"
+      }`}
+    >
+      {/* ✅ Card Header - EXTRA HEIGHT*/}
       <div className="relative h-72 md:h-96 flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-zinc-900 to-zinc-800">
         <div className="relative w-full h-full z-10">
           {defaultImage && hoverImage ? (
@@ -100,34 +109,96 @@ const ProjectCard: React.FC<ProjectCardProps & { isActive?: boolean }> = ({
 
         {/* Description */}
         <div className="flex-1 mb-6 mt-6">
-          <p className="text-gray-800 dark:text-gray-100">
-            {description}
-          </p>
+          <p className="text-gray-800 dark:text-gray-100">{description}</p>
         </div>
 
-        {/* Action Buttons - Slightly larger */}
+        {/* Action Buttons - Dynamic Links */}
         <div className="flex gap-4 mt-auto">
-          <Link
-            href="/demo"
-            className="flex items-center justify-center gap-2 px-5 py-3 text-black dark:text-white rounded-xl text-sm font-medium flex-1 border border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:border-blue-600 dark:hover:border-blue-400 transition-all"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12" />
-              <path d="M13 11L20 4" />
-              <path d="M21 3H15M21 3V9" />
-            </svg>
-            Demo
-          </Link>
+          {/* Demo Button - Conditional rendering */}
+          {demoUrl ? (
+            <Link
+              href={demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-5 py-3 text-black dark:text-white rounded-xl text-sm font-medium flex-1 border border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:border-blue-600 dark:hover:border-blue-400 transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12" />
+                <path d="M13 11L20 4" />
+                <path d="M21 3H15M21 3V9" />
+              </svg>
+              Demo
+            </Link>
+          ) : (
+            <button
+              disabled
+              className="flex items-center justify-center gap-2 px-5 py-3 text-zinc-400 dark:text-zinc-600 rounded-xl text-sm font-medium flex-1 border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800/50 cursor-not-allowed"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12" />
+                <path d="M13 11L20 4" />
+                <path d="M21 3H15M21 3V9" />
+              </svg>
+              Demo
+            </button>
+          )}
 
-          <Link
-            href="/code"
-            className="flex items-center justify-center gap-2 px-5 py-3 text-black dark:text-white rounded-xl text-sm font-medium flex-1 border border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:border-blue-600 dark:hover:border-blue-400 transition-all"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 432 416" fill="currentColor">
-              <path d="M213.5 0q88.5 0 151 62.5T427 213q0 70-41 125.5T281 416q-14 2-14-11v-58q0-27-15-40q44-5 70.5-27t26.5-77q0-34-22-58q11-26-2-57q-18-5-58 22q-26-7-54-7t-53 7q-18-12-32.5-17.5T107 88h-6q-12 31-2 57q-22 24-22 58q0 55 27 77t70 27q-11 10-13 29q-42 18-62-18q-12-20-33-22q-2 0-4.5.5t-5 3.5t8.5 9q14 7 23 31q1 2 2 4.5t6.5 9.5t13 10.5T130 371t30-2v36q0 13-14 11q-64-22-105-77.5T0 213q0-88 62.5-150.5T213.5 0z" />
-            </svg>
-            Code
-          </Link>
+          {/* Code Button - Conditional rendering */}
+          {codeUrl ? (
+            <Link
+              href={codeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-5 py-3 text-black dark:text-white rounded-xl text-sm font-medium flex-1 border border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:border-blue-600 dark:hover:border-blue-400 transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 432 416"
+                fill="currentColor"
+              >
+                <path d="M213.5 0q88.5 0 151 62.5T427 213q0 70-41 125.5T281 416q-14 2-14-11v-58q0-27-15-40q44-5 70.5-27t26.5-77q0-34-22-58q11-26-2-57q-18-5-58 22q-26-7-54-7t-53 7q-18-12-32.5-17.5T107 88h-6q-12 31-2 57q-22 24-22 58q0 55 27 77t70 27q-11 10-13 29q-42 18-62-18q-12-20-33-22q-2 0-4.5.5t-5 3.5t8.5 9q14 7 23 31q1 2 2 4.5t6.5 9.5t13 10.5T130 371t30-2v36q0 13-14 11q-64-22-105-77.5T0 213q0-88 62.5-150.5T213.5 0z" />
+              </svg>
+              Code
+            </Link>
+          ) : (
+            <button
+              disabled
+              className="flex items-center justify-center gap-2 px-5 py-3 text-zinc-400 dark:text-zinc-600 rounded-xl text-sm font-medium flex-1 border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800/50 cursor-not-allowed"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 432 416"
+                fill="currentColor"
+              >
+                <path d="M213.5 0q88.5 0 151 62.5T427 213q0 70-41 125.5T281 416q-14 2-14-11v-58q0-27-15-40q44-5 70.5-27t26.5-77q0-34-22-58q11-26-2-57q-18-5-58 22q-26-7-54-7t-53 7q-18-12-32.5-17.5T107 88h-6q-12 31-2 57q-22 24-22 58q0 55 27 77t70 27q-11 10-13 29q-42 18-62-18q-12-20-33-22q-2 0-4.5.5t-5 3.5t8.5 9q14 7 23 31q1 2 2 4.5t6.5 9.5t13 10.5T130 371t30-2v36q0 13-14 11q-64-22-105-77.5T0 213q0-88 62.5-150.5T213.5 0z" />
+              </svg>
+              Code
+            </button>
+          )}
         </div>
       </div>
     </div>
@@ -209,7 +280,6 @@ const ProjectCarousel = ({ projects }: { projects: ProjectCardProps[] }) => {
 
         {/* Navigation: Arrow - Dots - Arrow */}
         <div className="flex justify-center items-center gap-6 mt-10">
-          
           {/* Left Arrow */}
           <button
             onClick={scrollPrev}
@@ -362,58 +432,93 @@ export default function Home() {
       tags: ["Flutter", "Dart", "Firebase", "FastAPI", "Mobile"],
       defaultImage: "/projects/welcome.png",
       hoverImage: "/projects/haymobility-dashboard.png",
+      demoUrl: "https://github.com/ourhouchmohamed97/PFE",
+      codeUrl: "https://github.com/ourhouchmohamed97/PFE",
     },
     {
-      title: "Decentralized Voting System",
-      description: "Built on Ethereum blockchain, this secure and transparent platform ensures immutable and verifiable voting. Smart contracts handle voter registration and tallying, guaranteeing election integrity.",
-      tags: ["Solidity", "React", "Web3.js", "Hardhat"],
+      title: "AI Prompt Sharing Platform",
+      description:
+        "A modern and responsive web application designed for discovering, creating, and sharing AI-generated prompts across different creative and productivity domains. The platform features a clean futuristic interface focused on usability, inspiration, and collaboration, allowing users to explore trending prompts, publish their own creations, and organize content efficiently. Built with scalability and performance in mind, the application delivers a smooth user experience with dynamic content rendering, responsive layouts, and an engaging community-driven ecosystem for AI enthusiasts and creators.",
+      tags: ["Next.js", "React", "Tailwind CSS", "MongoDB", "TypeScript", "AI"],
       websiteDemo: {
-        image: "/projects/test.png",
-        title: "Voting System",
-        description: "Built on Ethereum blockchain, this secure and transparent platform ensures immutable and verifiable voting. Smart contracts handle voter registration and tallying, guaranteeing election integrity.",
-        badge: "Live v1.2",
-        projectName: "Votiw",
-        projectType: "Blockchain",
-      }
+        image: "/projects/promptopia.png",
+        title: "PromptHub Platform",
+        description:
+          "Community-driven platform for exploring, creating, and sharing AI-powered prompts with a futuristic user experience.",
+        badge: "Live v2.1",
+        projectName: "Promptopia",
+        projectType: "AI Platform",
+        url: "https://promptopia-platform.vercel.app/",
+      },
+      demoUrl: "https://promptopia-platform.vercel.app/",
+      codeUrl: "https://github.com/ourhouchmohamed97/promptopia-platform",
     },
     {
       title: "Webserv HTTP Server",
-      description: "A custom HTTP web server built in C++ designed to handle client connections, serve static content, and execute CGI scripts while following core HTTP protocol standards. The project focuses on low-level networking, socket programming, asynchronous I/O, and efficient request handling through a lightweight and scalable architecture. Features include multi-client connection management, configurable routing, request parsing, response generation, error handling, and support for dynamic content execution, providing a deep understanding of how modern web servers operate internally.",
-      tags: ["C++", "HTTP", "Socket Programming", "CGI", "Networking", "Asynchronous I/O"],
+      description:
+        "A custom HTTP web server built in C++ designed to handle client connections, serve static content, and execute CGI scripts while following core HTTP protocol standards. The project focuses on low-level networking, socket programming, asynchronous I/O, and efficient request handling through a lightweight and scalable architecture. Features include multi-client connection management, configurable routing, request parsing, response generation, error handling, and support for dynamic content execution, providing a deep understanding of how modern web servers operate internally.",
+      tags: [
+        "C++",
+        "HTTP",
+        "Socket Programming",
+        "CGI",
+        "Networking",
+        "Asynchronous I/O",
+      ],
       websiteDemo: {
         image: "/projects/test.png",
         title: "Custom HTTP Server Engine",
-        description: "Lightweight HTTP server capable of handling multiple client connections, static file serving, and CGI execution.",
+        description:
+          "Lightweight HTTP server capable of handling multiple client connections, static file serving, and CGI execution.",
         badge: "Live v2.0",
         projectName: "Webserv",
         projectType: "Network Infrastructure",
-      }
+      },
+      demoUrl: "",
+      codeUrl: "https://github.com/ourhouchmohamed97/webserv",
     },
     {
       title: "Chronora AI Study Planner",
-      description: "Chronora is an AI-powered study planning SaaS designed to help students manage academic workloads more effectively through intelligent scheduling, adaptive task prioritization, and predictive deadline analysis. The platform combines AI-generated study plans with real-time workload balancing to reduce stress, improve productivity, and prevent last-minute cramming. Built with Next.js, Prisma, and PostgreSQL, Chronora features secure authentication, analytics dashboards, responsive UI design, and a scalable full-stack architecture optimized for modern educational workflows.",
-      tags: ["Next.js", "Prisma", "PostgreSQL", "TypeScript", "AI", "Tailwind CSS"],
+      description:
+        "Chronora is an AI-powered study planning SaaS designed to help students manage academic workloads more effectively through intelligent scheduling, adaptive task prioritization, and predictive deadline analysis. The platform combines AI-generated study plans with real-time workload balancing to reduce stress, improve productivity, and prevent last-minute cramming. Built with Next.js, Prisma, and PostgreSQL, Chronora features secure authentication, analytics dashboards, responsive UI design, and a scalable full-stack architecture optimized for modern educational workflows.",
+      tags: [
+        "Next.js",
+        "Prisma",
+        "PostgreSQL",
+        "TypeScript",
+        "AI",
+        "Tailwind CSS",
+      ],
       websiteDemo: {
         image: "/projects/test.png",
         title: "Chronora Dashboard",
-        description: "Smart student productivity platform with AI-generated study plans, analytics, and adaptive scheduling.",
+        description:
+          "Smart student productivity platform with AI-generated study plans, analytics, and adaptive scheduling.",
         badge: "Live v3.1",
         projectName: "Chronora",
         projectType: "EdTech SaaS",
-      }
+        url: "https://chronora-website-y3kg.vercel.app/",
+      },
+      demoUrl: "",
+      codeUrl: "https://github.com/ourhouchmohamed97/chronora",
     },
     {
       title: "MiniShell Presentation Website",
-      description: "A clean and interactive presentation website designed to showcase the MiniShell project in a structured and visually engaging way. It highlights the shell’s core functionality, command parsing system, execution flow, and key features such as pipes, redirections, and environment handling. Built with a focus on clarity and user experience, the site presents technical concepts through interactive sections, diagrams, and demonstrations, making it easier to understand how the MiniShell operates under the hood.",
+      description:
+        "A clean and interactive presentation website designed to showcase the MiniShell project in a structured and visually engaging way. It highlights the shell’s core functionality, command parsing system, execution flow, and key features such as pipes, redirections, and environment handling. Built with a focus on clarity and user experience, the site presents technical concepts through interactive sections, diagrams, and demonstrations, making it easier to understand how the MiniShell operates under the hood.",
       tags: ["Next.js", "UI/UX", "Tailwind CSS", "JavaScript", "Web Design"],
       websiteDemo: {
         image: "/projects/Minishell.png",
         title: "MiniShell Showcase",
-        description: "Interactive presentation site demonstrating MiniShell features, architecture, and command execution workflow.",
+        description:
+          "Interactive presentation site demonstrating MiniShell features, architecture, and command execution workflow.",
         badge: "Live v2.3",
         projectName: "MiniShell",
         projectType: "Systems Project",
-      }
+        url: "https://minishell-website-y3kg.vercel.app/",
+      },
+      demoUrl: "https://minishell-website-y3kg.vercel.app/",
+      codeUrl: "https://github.com/ourhouchmohamed97/minishell-website",
     },
   ];
 
@@ -510,7 +615,8 @@ export default function Home() {
                 <span>&nbsp;a Full Stack Developer</span>
               </div>
               <div className="block">
-                I build fast, responsive, and user-focused web experiences that make an impact.
+                I build fast, responsive, and user-focused web experiences that
+                make an impact.
               </div>
             </div>
 
