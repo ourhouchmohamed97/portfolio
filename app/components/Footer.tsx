@@ -19,7 +19,7 @@ export default function Footer() {
         </p>
         <div className="flex flex-col md:flex-row pt-8 items-center justify-between">
           <p className="text-gray-400 text-sm">
-            © 2025 Mohamed Ourhouch. All rights reserved.
+            © {new Date().getFullYear()} Mohamed Ourhouch. All rights reserved.
           </p>
 
           <div className="flex gap-6">
