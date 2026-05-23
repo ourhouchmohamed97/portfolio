@@ -99,8 +99,8 @@ const ProjectCard: React.FC<ProjectCardProps & { isActive?: boolean }> = ({
         </div>
 
         {/* Description */}
-        <div className="flex-1 mb-6">
-          <p className="text-gray-800 dark:text-gray-100 text-base leading-relaxed line-clamp-4">
+        <div className="flex-1 mb-6 mt-6">
+          <p className="text-gray-800 dark:text-gray-100">
             {description}
           </p>
         </div>
@@ -365,37 +365,55 @@ export default function Home() {
     },
     {
       title: "Decentralized Voting System",
-      description:
-        "Built on Ethereum blockchain, this secure and transparent platform ensures immutable and verifiable voting. Smart contracts handle voter registration and tallying, guaranteeing election integrity.",
+      description: "Built on Ethereum blockchain, this secure and transparent platform ensures immutable and verifiable voting. Smart contracts handle voter registration and tallying, guaranteeing election integrity.",
       tags: ["Solidity", "React", "Web3.js", "Hardhat"],
-      image: "/projects/Haymobility2.png",
-    },
-    {
-      title: "E-commerce API Gateway",
-      description: "A robust microservices-based API gateway handling product catalog, user authentication, order processing, and payment integration...",
-      tags: ["Node.js", "Express", "Kafka", "MongoDB", "Docker"],
       websiteDemo: {
         image: "/projects/test.png",
-        title: "ShopFlow Storefront",
-        description: "Modern e-commerce platform with product showcase, cart, and secure checkout flow.",
-        badge: "Live v2.0",
-        projectName: "ShopFlow",
-        projectType: "E-commerce",
+        title: "Voting System",
+        description: "Built on Ethereum blockchain, this secure and transparent platform ensures immutable and verifiable voting. Smart contracts handle voter registration and tallying, guaranteeing election integrity.",
+        badge: "Live v1.2",
+        projectName: "Votiw",
+        projectType: "Blockchain",
       }
     },
     {
-      title: "Real-time Chat Application",
-      description:
-        "A responsive chat application featuring instant messaging, group chats, emoji support, and file sharing. Leverages WebSockets for real-time services.",
-      tags: ["React", "Socket.io", "Node.js", "Redis"],
-      image: "/projects/2.jpg",
+      title: "Webserv HTTP Server",
+      description: "A custom HTTP web server built in C++ designed to handle client connections, serve static content, and execute CGI scripts while following core HTTP protocol standards. The project focuses on low-level networking, socket programming, asynchronous I/O, and efficient request handling through a lightweight and scalable architecture. Features include multi-client connection management, configurable routing, request parsing, response generation, error handling, and support for dynamic content execution, providing a deep understanding of how modern web servers operate internally.",
+      tags: ["C++", "HTTP", "Socket Programming", "CGI", "Networking", "Asynchronous I/O"],
+      websiteDemo: {
+        image: "/projects/test.png",
+        title: "Custom HTTP Server Engine",
+        description: "Lightweight HTTP server capable of handling multiple client connections, static file serving, and CGI execution.",
+        badge: "Live v2.0",
+        projectName: "Webserv",
+        projectType: "Network Infrastructure",
+      }
     },
     {
-      title: "Healthcare Management",
-      description:
-        "A secure web portal for managing patient records, appointments, and medical inventory. Includes role-based access control and integrates with various medical devices for data capture.",
-      tags: ["Angular", "Spring Boot", "MySQL", "JWT"],
-      image: "/projects/1.jpg",
+      title: "Chronora AI Study Planner",
+      description: "Chronora is an AI-powered study planning SaaS designed to help students manage academic workloads more effectively through intelligent scheduling, adaptive task prioritization, and predictive deadline analysis. The platform combines AI-generated study plans with real-time workload balancing to reduce stress, improve productivity, and prevent last-minute cramming. Built with Next.js, Prisma, and PostgreSQL, Chronora features secure authentication, analytics dashboards, responsive UI design, and a scalable full-stack architecture optimized for modern educational workflows.",
+      tags: ["Next.js", "Prisma", "PostgreSQL", "TypeScript", "AI", "Tailwind CSS"],
+      websiteDemo: {
+        image: "/projects/test.png",
+        title: "Chronora Dashboard",
+        description: "Smart student productivity platform with AI-generated study plans, analytics, and adaptive scheduling.",
+        badge: "Live v3.1",
+        projectName: "Chronora",
+        projectType: "EdTech SaaS",
+      }
+    },
+    {
+      title: "MiniShell Presentation Website",
+      description: "A clean and interactive presentation website designed to showcase the MiniShell project in a structured and visually engaging way. It highlights the shell’s core functionality, command parsing system, execution flow, and key features such as pipes, redirections, and environment handling. Built with a focus on clarity and user experience, the site presents technical concepts through interactive sections, diagrams, and demonstrations, making it easier to understand how the MiniShell operates under the hood.",
+      tags: ["Next.js", "UI/UX", "Tailwind CSS", "JavaScript", "Web Design"],
+      websiteDemo: {
+        image: "/projects/Minishell.png",
+        title: "MiniShell Showcase",
+        description: "Interactive presentation site demonstrating MiniShell features, architecture, and command execution workflow.",
+        badge: "Live v2.3",
+        projectName: "MiniShell",
+        projectType: "Systems Project",
+      }
     },
   ];
 
@@ -492,8 +510,7 @@ export default function Home() {
                 <span>&nbsp;a Full Stack Developer</span>
               </div>
               <div className="block">
-                I build fast, responsive, and user-focused web experiences that
-                make an impact.
+                I build fast, responsive, and user-focused web experiences that make an impact.
               </div>
             </div>
 
