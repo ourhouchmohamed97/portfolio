@@ -7,6 +7,7 @@ interface WebsiteDemoProps {
   badge?: string;
   projectName: string;
   projectType?: string;
+  url?: string;
 }
 
 export function WebsiteDemo({ 
@@ -15,10 +16,11 @@ export function WebsiteDemo({
   description, 
   badge,
   projectName, 
-  projectType = "Web Application"
+  projectType = "Web Application",
+  url
 }: WebsiteDemoProps) {
   
-  const urlSlug = title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  const displayUrl = url || `${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}.demo.app`;
 
   return (
     <div className="relative w-full min-h-[600px] flex flex-col items-center justify-center py-16 px-4 bg-gradient-to-br from-purple-500 to-pink-500 dark:from-purple-900 dark:to-pink-900">
@@ -54,16 +56,13 @@ export function WebsiteDemo({
             
             {/* URL bar */}
             <div className="flex-1 mx-4">
-              <div className="flex items-center gap-2 px-4 py-1.5 bg-white rounded-lg border border-zinc-200 dark:border-zinc-700">
+              <div className="flex items-center gap-2 px-4 py-1.5 bg-white dark:bg-zinc-800 rounded-lg border border-zinc-200 dark:border-zinc-700">
                 <svg className="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
-                <a 
-                  href="https://www.vervecopilot.com/interview-questions/can-c-string-reverse-be-the-secret-weapon-for-acing-your-next-interview" 
-                  target="_blank"
-                  className="text-xs dark:text-black truncate">
-                  {urlSlug}.demo.app
-                </a>
+                <span className="text-xs text-zinc-500 dark:text-black truncate">
+                  {displayUrl}
+                </span>
               </div>
             </div>
 
