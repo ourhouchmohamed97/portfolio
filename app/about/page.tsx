@@ -172,7 +172,7 @@ export default function Homepage() {
                   <time className="block text-sm font-medium uppercase tracking-wider text-zinc-500">
                     SEP 2023 - JAN 2025
                   </time>
-                  <h3 className="text-2xl font-light text-white">
+                  <h3 className="text-2xl font-light dark:text-white">
                     License Degree
                   </h3>
                   <p className="text-zinc-400">Abdelmalek Essaadi University</p>
@@ -201,7 +201,7 @@ export default function Homepage() {
                 {/* Right Column - Description */}
                 <div className="lg:col-span-7">
                   <div className="space-y-4 text-zinc-300 leading-relaxed">
-                    <p className="text-white font-medium">
+                    <p className="dark:text-white font-medium">
                       Licence in Computer Science – Abdelmalek Essaadi
                       University, Tetouan, Morocco
                     </p>
@@ -249,7 +249,7 @@ export default function Homepage() {
                   <time className="block text-sm font-medium uppercase tracking-wider text-zinc-500">
                     OCT 2025 - PRESENT
                   </time>
-                  <h3 className="text-2xl font-light text-white">
+                  <h3 className="text-2xl font-light dark:text-white">
                     Software Engineering Program
                   </h3>
                   <p className="text-zinc-400">42 (1337) School</p>
@@ -278,7 +278,7 @@ export default function Homepage() {
                 {/* Right Column - Description */}
                 <div className="lg:col-span-7">
                   <div className="space-y-4 text-zinc-300 leading-relaxed">
-                    <p className="text-white font-medium">
+                    <p className="dark:text-white font-medium">
                       Software Engineering Program – 42(1337), Tetouan, Morocco
                     </p>
                     <p className="text-zinc-400">
