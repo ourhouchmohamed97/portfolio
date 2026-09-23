@@ -167,24 +167,6 @@ export default function Home() {
       codeUrl: "https://github.com/ourhouchmohamed97/PFE",
     },
     {
-      title: "AI Prompt Sharing Platform",
-      description:
-        "A modern and responsive web application designed for discovering, creating, and sharing AI-generated prompts across different creative and productivity domains. The platform features a clean futuristic interface focused on usability, inspiration, and collaboration, allowing users to explore trending prompts, publish their own creations, and organize content efficiently. Built with scalability and performance in mind, the application delivers a smooth user experience with dynamic content rendering, responsive layouts, and an engaging community-driven ecosystem for AI enthusiasts and creators.",
-      tags: ["Next.js", "React", "Tailwind CSS", "MongoDB", "TypeScript", "AI"],
-      websiteDemo: {
-        image: "/projects/promptopia.png",
-        title: "PromptHub Platform",
-        description:
-          "Community-driven platform for exploring, creating, and sharing AI-powered prompts with a futuristic user experience.",
-        badge: "Live v2.1",
-        projectName: "Promptopia",
-        projectType: "AI Platform",
-        url: "https://promptopia-platform.vercel.app/",
-      },
-      demoUrl: "https://promptopia-platform.vercel.app/",
-      codeUrl: "https://github.com/ourhouchmohamed97/promptopia-platform",
-    },
-    {
       title: "Webserv HTTP Server",
       description:
         "A custom HTTP web server built in C++ designed to handle client connections, serve static content, and execute CGI scripts while following core HTTP protocol standards. The project focuses on low-level networking, socket programming, asynchronous I/O, and efficient request handling through a lightweight and scalable architecture. Features include multi-client connection management, configurable routing, request parsing, response generation, error handling, and support for dynamic content execution, providing a deep understanding of how modern web servers operate internally.",
@@ -197,15 +179,16 @@ export default function Home() {
         "Asynchronous I/O",
       ],
       websiteDemo: {
-        image: "/projects/test.png",
+        image: "/projects/webserv.png",
         title: "Custom HTTP Server Engine",
         description:
           "Lightweight HTTP server capable of handling multiple client connections, static file serving, and CGI execution.",
         badge: "Live v2.0",
         projectName: "Webserv",
         projectType: "Network Infrastructure",
+        url:"https://webserv.com"
       },
-      demoUrl: "",
+      demoUrl: "https://webserv-rod9.onrender.com/",
       codeUrl: "https://github.com/ourhouchmohamed97/webserv",
     },
     {
@@ -221,17 +204,67 @@ export default function Home() {
         "Tailwind CSS",
       ],
       websiteDemo: {
-        image: "/projects/test.png",
+        image: "/projects/chronora.png",
         title: "Chronora Dashboard",
         description:
           "Smart student productivity platform with AI-generated study plans, analytics, and adaptive scheduling.",
         badge: "Live v3.1",
         projectName: "Chronora",
         projectType: "EdTech SaaS",
-        url: "https://chronora-website-y3kg.vercel.app/",
+        url: "https://chronora.com/",
       },
-      demoUrl: "",
+      demoUrl: "https://chronora-seven.vercel.app/",
       codeUrl: "https://github.com/ourhouchmohamed97/chronora",
+    },
+    {
+      title: "Miami Event Venues Platform",
+      description:
+        "A modern venue discovery platform designed to help users find the perfect space for weddings, parties, and special events across Miami. The experience focuses on making venue discovery simple and engaging, with curated listings, verified photography, transparent pricing, neighborhood-based browsing, and availability information. Built with a polished, editorial-inspired interface, the platform helps users quickly explore venues, compare options, and find a space that matches the atmosphere and occasion they have in mind.",
+      tags: [
+        "Next.js",
+        "React",
+        "UI/UX",
+        "Tailwind CSS",
+        "JavaScript",
+        "Web Design",
+      ],
+      websiteDemo: {
+        image: "/projects/MiamiVenue.png",
+        title: "Miami Event Venues",
+        description:
+          "A venue discovery experience showcasing Miami's best wedding, party, and event spaces with verified photos, transparent pricing, and availability.",
+        badge: "Live",
+        projectName: "Miami Venues",
+        projectType: "Web Platform",
+        url: "https://MiamiVenue.com",
+      },
+      demoUrl: "https://miami-venue.vercel.app/",
+      codeUrl: "https://github.com/ourhouchmohamed97/MiamiVenue",
+    },
+    {
+      title: "React Shopping Cart App",
+      description:
+        "A modern and responsive shopping cart application built with React, designed to provide a smooth and intuitive e-commerce experience. The app includes dynamic product fetching, product browsing, cart management, quantity updates, item removal, and real-time price calculations. React Router is used to organize navigation between pages, while CSS Modules provide scoped and maintainable styling. The project also includes comprehensive component and user interaction testing with React Testing Library, ensuring reliable functionality across the shopping experience.",
+      tags: [
+        "React",
+        "React Router",
+        "CSS Modules",
+        "JavaScript",
+        "React Testing Library",
+        "E-commerce",
+      ],
+      websiteDemo: {
+        image: "/projects/ShoppingCart.png",
+        title: "Shopping Cart",
+        description:
+          "Interactive React e-commerce application featuring product fetching, cart management, routing, responsive styling, and tested user interactions.",
+        badge: "Live",
+        projectName: "React Shopping Cart",
+        projectType: "Frontend Project",
+        url: "https://Fieldstore.com",
+      },
+      demoUrl: "https://shopping-cart-six.vercel.app/",
+      codeUrl: "https://github.com/ourhouchmohamed97/shopping-cart",
     },
     {
       title: "MiniShell Presentation Website",
