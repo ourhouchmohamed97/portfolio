@@ -125,20 +125,20 @@ export default function Homepage() {
             </div>
 
             {/* ── Image column (RIGHT) ── */}
-            <div className="relative flex flex-col justify-center md:justify-end">
-              <div className="aspect-square w-full max-w-md overflow-hidden rounded-2xl border-4 border-zinc-200/60 shadow-xl transition-transform duration-500 hover:scale-[1.03] dark:border-zinc-700/60 dark:shadow-2xl">
-                <Image
-                  src="/images/Rectangle.png"
-                  alt="Mohamed – Software Engineer"
-                  fill
-                  className="object-cover grayscale-[30%] transition-all duration-700 hover:grayscale-0"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                />
+            <div className="relative flex flex-col items-center justify-start md:items-end md:justify-start">
+            <div className="relative aspect-square w-full max-w-md overflow-hidden rounded-2xl border-4 border-zinc-200/60 shadow-xl transition-transform duration-500 hover:scale-[1.03] dark:border-zinc-700/60 dark:shadow-2xl">
+              <Image
+                src="/images/aboutImg.jpeg"
+                alt="Mohamed – Software Engineer"
+                fill
+                className="object-cover grayscale-[30%] transition-all duration-700 hover:grayscale-0"
+                priority
+                sizes="(max-width: 768px) 100vw, 40vw"
+              />
               </div>
 
               {/* Badge */}
-              <div className="absolute -bottom-8 left-1/2 md:left-auto md:right-8 -translate-x-1/2 md:translate-x-0 whitespace-nowrap rounded-full bg-[#432dd7] px-6 py-2 text-sm font-medium text-white shadow-lg">
+              <div className="absolute -bottom-8 left-1/2 md:left-auto md:right-8 -translate-x-1/2 md:translate-x-0 whitespace-nowrap rounded-full bg-[#432dd7] px-6 py-2 text-sm font-medium dark:text-white text-black shadow-lg">
                 @42 Student • Full-Stack
               </div>
             </div>
