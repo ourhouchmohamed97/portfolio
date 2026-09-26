@@ -410,7 +410,7 @@ export default function ContactButton() {
             </div>
           )}
 
-          {/* Form Sent Notification */}
+          {/* Form Sent Notif */}
           {showFormNotification && (
             <div className="fixed top-8 left-1/2 -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2 animate-in fade-in slide-in-from-top duration-300 z-[60]">
               <svg
