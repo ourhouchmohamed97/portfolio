@@ -217,11 +217,11 @@ export default function Homepage() {
                 )}
 
                 {activeTab === "form" && (
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
+                        className="block text-gray-700 dark:text-gray-300 text-sm font-medium mt-4 mb-2"
                       >
                         Name
                       </label>
@@ -239,7 +239,7 @@ export default function Homepage() {
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
+                        className="block text-gray-700 dark:text-gray-300 text-sm font-medium mt-4 mb-2"
                       >
                         Email
                       </label>
@@ -257,7 +257,7 @@ export default function Homepage() {
                     <div>
                       <label
                         htmlFor="message"
-                        className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
+                        className="block text-gray-700 dark:text-gray-300 text-sm font-medium mt-4 mb-2"
                       >
                         Message
                       </label>
