@@ -132,6 +132,28 @@ export default function ContactButton() {
             className="bg-white dark:bg-black border-gray-200 dark:border-white/10 rounded-2xl shadow-2xl max-w-lg w-full border animate-in fade-in zoom-in duration-300"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Close Button */}
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+              className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-white/10 dark:hover:text-white"
+              aria-label="Close contact panel"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
             {/* Decorative Bar */}
             <div className="flex justify-center pt-8 pb-10">
               <div className="w-32 h-1.5 rounded-full bg-gray-500 dark:via-gray-600"></div>
