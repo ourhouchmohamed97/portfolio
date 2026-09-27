@@ -46,7 +46,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <div className="group relative  rounded-2xl transition-all duration-500 h-full flex flex-col hover:shadow-2xl hover:shadow-[#432dd7]/10 w-full overflow-hidden">
-      {/* ✅ Card Header - Homepage Size (h-72 md:h-96) */}
+      {/* Card Header - Homepage Size (h-72 md:h-96) */}
       <div className="relative h-72 md:h-96 flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-zinc-900 to-zinc-800">
         <div className="relative w-full h-full z-10">
           {defaultImage && hoverImage ? (
@@ -67,7 +67,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
       </div>
 
-      {/* ✅ Card Content - Homepage Padding & Shadows */}
+      {/* Card Content - Homepage Padding & Shadows */}
       <div
         className={cn(
           "p-6 md:p-8 flex-1 flex flex-col rounded-b-2xl",
@@ -99,7 +99,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </p>
         </div>
 
-        {/* ✅ Action Buttons - Dynamic Links */}
+        {/* Action Buttons - Dynamic Links */}
         <div className="flex gap-4 mt-auto">
           {demoUrl ? (
             <Link
